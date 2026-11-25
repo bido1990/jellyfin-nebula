@@ -1,5 +1,6 @@
 /* Nebula — tema para Jellyfin 12 · https://github.com/nemesbak/jellyfin-nebula · MIT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Fork: Google Fonts import disabled for privacy (no client IPs sent to Google). Falls back to system-ui.
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
 
 :root {
   --nb-bg: #0b0b0d;

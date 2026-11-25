@@ -1,3 +1,4 @@
+/* WARNING (fork bido1990/jellyfin-nebula): do not use. Loads unpinned JS from upstream main. */
 /* Nebula — cargador del carrusel para el plugin «JavaScript Injector» (o cualquier inyector).
    Pega estas líneas tal cual: siempre carga la última versión del repo. */
 (function () {

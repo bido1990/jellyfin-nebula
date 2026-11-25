@@ -11,6 +11,10 @@
 # Quitarlo:   curl -fsSL https://raw.githubusercontent.com/nemesbak/jellyfin-nebula/main/install/nebula.sh | bash -s -- --uninstall
 # Opcional:   JELLYFIN_API_KEY=… / EMBY_API_KEY=…  delante de «bash» para que ponga también el tema él solo.
 set -u
+# Fork bido1990/jellyfin-nebula: disabled on purpose (mounts docker.sock, pulls code from upstream main).
+# Remove these two lines only after reviewing the script.
+echo "Disabled in this fork: see README.md, About this fork." >&2
+exit 1
 REPO="https://raw.githubusercontent.com/nemesbak/jellyfin-nebula/main"
 INYECTOR="${NEBULA_INYECTOR:-$REPO/install/inject-docker.sh}"
 MODO="${1:-}"

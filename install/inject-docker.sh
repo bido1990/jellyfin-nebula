@@ -18,6 +18,10 @@
 #   SERVER_PORT       puerto interno si no es el habitual (se detecta solo: 8096, 8097, 8920)
 #   WEB               carpeta web si no está en el sitio habitual
 set -u
+# Fork bido1990/jellyfin-nebula: disabled on purpose (mounts docker.sock, pulls code from upstream main).
+# Remove these two lines only after reviewing the script.
+echo "Disabled in this fork: see README.md, About this fork." >&2
+exit 1
 ARG="${1:-${JELLYFIN_CONTAINER:-${EMBY_CONTAINER:-auto}}}"; MODO="${2:-}"
 case "$ARG" in --*) MODO="$ARG"; ARG="${JELLYFIN_CONTAINER:-${EMBY_CONTAINER:-auto}}" ;; esac
 CDN="https://cdn.jsdelivr.net/gh/nemesbak/jellyfin-nebula@main"

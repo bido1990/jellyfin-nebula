@@ -1,3 +1,4 @@
+# WARNING (fork bido1990/jellyfin-nebula): do not use. Mounts docker.sock and runs code from upstream main.
 # Nebula — añade este servicio al docker-compose.yml donde tengas Jellyfin y/o Emby.
 # Busca solo todos los Jellyfin y Emby del equipo, les pone el carrusel y lo vuelve a poner tras
 # cada actualización. No hace falta cambiar nada: copia, pega y «docker compose up -d».
