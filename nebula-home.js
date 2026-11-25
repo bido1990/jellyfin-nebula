@@ -43,7 +43,7 @@
     var want = c.library.split(',').map(function (x) { return x.trim().toLowerCase(); });
     return api().getJSON(api().getUrl('Users/' + uid + '/Views')).then(function (r) {
       var ids = (r.Items || []).filter(function (v) { return want.indexOf((v.Name || '').toLowerCase()) >= 0; }).map(function (v) { return v.Id; });
-      if (!ids.length) console.warn('[NebulaHero] no encuentro la biblioteca', c.library);
+      if (!ids.length) console.warn('[NebulaHero] libreria non trovata', c.library);
       return ids.length ? ids : [null];
     });
   }
@@ -90,7 +90,7 @@
     el.className = 'nbHero';
     el.innerHTML =
       '<div class="nbHero-slides">' + items.map(function (i, n) {
-        var meta = [i.ProductionYear, i.Type === 'Series' ? (i.ChildCount ? i.ChildCount + (i.ChildCount === 1 ? ' temporada' : ' temporadas') : 'Serie') : dur(i.RunTimeTicks), i.OfficialRating]
+        var meta = [i.ProductionYear, i.Type === 'Series' ? (i.ChildCount ? i.ChildCount + (i.ChildCount === 1 ? ' stagione' : ' stagioni') : 'Serie') : dur(i.RunTimeTicks), i.OfficialRating]
           .filter(Boolean).map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('');
         if (c.rating && i.CommunityRating) meta += '<span class="nbHero-star">★ ' + i.CommunityRating.toFixed(1) + '</span>';
         var gen = (c.genres ? i.Genres || [] : []).slice(0, 3).map(function (g) { return '<span class="nbHero-chip">' + esc(g) + '</span>'; }).join('');
@@ -104,14 +104,14 @@
             '<div class="nbHero-genres">' + gen + '</div>' +
             (c.overview ? '<p class="nbHero-overview">' + esc(i.Overview) + '</p>' : '') +
             (!c.buttons ? '' : '<div class="nbHero-actions">' +
-              '<a class="nbHero-btn nbHero-btn--main" data-play="' + i.Id + '" href="' + url + '"><span class="material-icons">play_arrow</span>Ver ahora</a>' +
-              '<a class="nbHero-btn" href="' + url + '"><span class="material-icons">info_outline</span>Más info</a>' +
+              '<a class="nbHero-btn nbHero-btn--main" data-play="' + i.Id + '" href="' + url + '"><span class="material-icons">play_arrow</span>Guarda ora</a>' +
+              '<a class="nbHero-btn" href="' + url + '"><span class="material-icons">info_outline</span>Altre info</a>' +
             '</div>') +
           '</div></article>';
       }).join('') + '</div>' +
-      '<button class="nbHero-nav nbHero-prev" aria-label="Anterior"><span class="material-icons">chevron_left</span></button>' +
-      '<button class="nbHero-nav nbHero-next" aria-label="Siguiente"><span class="material-icons">chevron_right</span></button>' +
-      '<div class="nbHero-dots">' + items.map(function (_, n) { return '<button class="nbHero-dot' + (n === 0 ? ' is-active' : '') + '" data-i="' + n + '" aria-label="Ir a ' + (n + 1) + '"><i></i></button>'; }).join('') + '</div>';
+      '<button class="nbHero-nav nbHero-prev" aria-label="Precedente"><span class="material-icons">chevron_left</span></button>' +
+      '<button class="nbHero-nav nbHero-next" aria-label="Successivo"><span class="material-icons">chevron_right</span></button>' +
+      '<div class="nbHero-dots">' + items.map(function (_, n) { return '<button class="nbHero-dot' + (n === 0 ? ' is-active' : '') + '" data-i="' + n + '" aria-label="Vai a ' + (n + 1) + '"><i></i></button>'; }).join('') + '</div>';
 
     var actual = 0, timer = null, slides = el.querySelectorAll('.nbHero-slide'), dots = el.querySelectorAll('.nbHero-dot');
     function ir(n) {

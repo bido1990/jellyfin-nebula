@@ -300,7 +300,7 @@ body { color: var(--nb-text); }
 /* Píldoras sin comas */
 .itemTags, .itemExternalLinks, .detailsGroupItem .content { font-size: 0 !important; }
 .itemTags a, .itemExternalLinks a, .detailsGroupItem .content a { font-size: .85rem !important; margin: .15em .3em .15em 0 !important; }
-.itemTags::before { content: "Etiquetas"; font-size: .85rem; color: var(--nb-muted); margin-right: .6em; }
+.itemTags::before { content: "Etichette"; font-size: .85rem; color: var(--nb-muted); margin-right: .6em; }
 .detailsGroupItem .label { color: var(--nb-muted); }
 /* Fondo de ficha más visible */
 .backgroundContainer.withBackdrop { opacity: 1 !important; background: linear-gradient(to bottom, rgba(11,11,13,.25), rgba(11,11,13,.82) 50%, var(--nb-bg) 85%) !important; }
@@ -573,7 +573,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-even
 .detailSection .itemTags a::before { content: "#"; opacity: .6; margin-right: 1px; }
 .detailSection .itemTags a:hover { color: #fff !important; }
 .detailSection .itemExternalLinks a { font-size: .78rem !important; }
-.detailSection .itemExternalLinks::before { content: "Enlaces"; font-size: .85rem; color: var(--nb-muted); margin-right: .6em; }
+.detailSection .itemExternalLinks::before { content: "Link"; font-size: .85rem; color: var(--nb-muted); margin-right: .6em; }
 
 /* ---------- Ribbon: datos con separadores suaves ---------- */
 .detailRibbon .itemMiscInfo { gap: .2em; align-items: center; }
