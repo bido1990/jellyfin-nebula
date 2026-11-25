@@ -5,3 +5,17 @@
   --nb-grad: linear-gradient(135deg, var(--nb-a1), var(--nb-a2));
   --nb-on-accent: #111114;   /* texto oscuro: sobre blanco no se leería */
 }
+
+/* Fork: play button on poster hover. Dark circle with a white play icon instead of a dark icon on white. */
+.cardOverlayFab-primary,
+.cardOverlayFab-primary:hover {
+  background: rgba(24,24,30,.82) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5) !important;
+}
+/* Extra classes so it beats ".paper-icon-button-light:hover:not(:disabled)" in nebula.css */
+.cardOverlayFab-primary.paper-icon-button-light:hover:not(:disabled),
+.cardOverlayFab-primary:hover { background: rgba(40,40,48,.92) !important; color: #fff !important; border-color: #fff !important; }
+.cardOverlayFab-primary .material-icons,
+.cardOverlayFab-primary span { color: #fff !important; }
