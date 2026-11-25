@@ -12,3 +12,6 @@
 .cardOverlayFab-primary.paper-icon-button-light .material-icons,
 .cardOverlayFab-primary.paper-icon-button-light:hover:not(:disabled),
 .cardOverlayFab-primary.paper-icon-button-light:hover:not(:disabled) .material-icons { color: #fff !important; }
+
+/* Fork: checked checkbox. The box is white with this accent, so the tick must be black (theme sets it white). */
+.emby-checkbox:checked + span + .checkboxOutline .checkboxIcon-checked { color: #000 !important; }

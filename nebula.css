@@ -1011,6 +1011,8 @@ select { color-scheme: dark; }
 .homePage .pageTabContent[data-index="1"].is-active:not(:has(.card)) { align-content: center; gap: .8em; }
 #searchTextInput, .searchFields .emby-input { padding-left: 3.6em !important; }
 .searchFieldsInner .searchfields-icon { left: 1.1em; }
+/* Fork: center the search icon vertically (jellyfin-web sets align-self: flex-end on it) */
+.searchFieldsInner .searchfields-icon { top: 50%; transform: translateY(-50%); align-self: center !important; margin: 0 !important; line-height: 1; }
 
 /* Guía: borde izquierdo uniforme (programas que empezaron antes de la hora visible) */
 .programGrid.guideScroller {
