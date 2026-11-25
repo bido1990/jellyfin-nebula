@@ -933,7 +933,7 @@ select { color-scheme: dark; }
 /* ---------- Favoritos vacío ---------- */
 .homePage .pageTabContent[data-index="1"].is-active:not(:has(.card)) { min-height: 50vh; display: grid !important; place-items: center; }
 .homePage .pageTabContent[data-index="1"].is-active:not(:has(.card))::before {
-  content: "Aún no tienes favoritos\A Pulsa el ♥ en cualquier peli o serie y aparecerá aquí";
+  content: "Non hai ancora preferiti\A Premi il ♥ su un film o una serie e apparirà qui";
   white-space: pre-line; text-align: center; line-height: 1.7; color: var(--nb-muted); font-size: 1.05em;
 }
 
